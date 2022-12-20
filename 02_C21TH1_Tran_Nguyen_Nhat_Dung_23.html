@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+    html {
+      font-family:  sans-serif;
+      color: green;
+    }
+  </style>
+
+  <style>
+    .container {
+      margin: 50px auto;
+      width: 39%;
+    }
+    .form-info {
+      float: left;
+      width: 100%;
+      padding: 20px;
+      border: 1px solid #000;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #000;
+    }
+    .row {
+      float: left;
+      margin-bottom: 10px;
+      width: 100%;
+      
+    }
+    .title {
+      color: red;
+      text-align: center;
+
+      text-shadow: 0 0 10px #000;
+    }
+    .left {
+      float: left;
+      width: 25%;
+    }
+    .right {
+      float: left;
+      width: 75%;
+    }
+    .form-group {
+      float: left;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      outline: none;
+      font-size: 16px;
+      border: 1px solid #111;
+    }
+    .form-control.valid {
+      border-color: red;
+    }
+    .form-label {
+      line-height: 36px;
+    }
+    .form-message {
+      color: red;
+      font-size: 14px;
+    }
+    .wrapper-form-radio {
+      float: left;
+      margin-right: 10px;
+      line-height: 36px;
+    }
+    .wrapper-btn {
+      margin: 0 auto;
+      width: 50%;
+      text-align: center;
+    }
+    .btn {
+      padding: 10px;
+      border-radius: 10px;
+      color: green;
+      cursor: pointer;
+      border: 2px solid rgb(2, 97, 56);
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <div class="form-info">
+        <div class="row">
+          <h1 class="title">PHIẾU CÔNG TÁC</h1>
+        </div>
+
+        <div class="row">
+          <div class="form-group">
+            <div class="left">
+              <label class="form-label" for="ho-ten">Họ và tên:</label>
+            </div>
+            <div class="right">
+              <input type="text" id="ho-ten" class="form-control" placeholder="Nhập Họ và tên" />
+              <span class="form-message"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+              <div class="left">
+                <label class="form-label">Phái:</label>
+              </div>
+              <div class="right">
+                <div class="wrapper-form-radio">
+                  <label for="nam">Nam</label>
+                  <input checked name="gioi-tinh" type="radio" id="nam" value="nam" class="form-radio" />
+                </div>
+                <div class="wrapper-form-radio">
+                  <label for="nu">Nữ</label>
+  
+                  <input name="gioi-tinh" type="radio" id="nu" value="nu" class="form-radio" />
+                </div>
+                <span class="form-message"></span>
+              </div>
+            </div>
+          </div>
+
+        <div class="row">
+          <div class="form-group">
+            <div class="left">
+              <label class="form-label" for="cmnd">Số CMND:</label>
+            </div>
+            <div class="right">
+              <input type="text" id="cmnd" class="form-control" placeholder="Nhập số CMND" />
+              <span class="form-message"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+              <div class="left">
+                <label class="form-label" for="bo-phan">Bộ phận:</label>
+              </div>
+              <div class="right">
+                <select class="form-control" name="bo-phan" id="bo-phan"></select>
+                <span class="form-message"></span>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="form-group">
+              <div class="left">
+                <label class="form-label" for="ngay-di">Ngày đi:</label>
+              </div>
+              <div class="right">
+                <input type="text" id="ngay-di" class="form-control" placeholder="Nhập ngày đi" />
+                <span class="form-message"></span>
+              </div>
+            </div>
+          </div>
+
+        <div class="row">
+            <div class="form-group">
+              <div class="left">
+                <label class="form-label" for="so-ngay">Số ngày:</label>
+              </div>
+              <div class="right">
+                <input type="text" id="so-ngay" class="form-control" placeholder="Nhập số ngày" />
+                <span class="form-message"></span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <span class="ket-qua"></span>
+          </div>
+
+        <div class="row">
+          <div class="wrapper-btn">
+            <button class="btn thuc-hien">Thực hiện</button>
+            <button class="btn tao-moi">Tạo mới</button>
+          </div>
+        </div>       
+      </div>
+    </div>
+    <script>
+        var chuoiLoi="(*) Lỗi nhập liệu"
+        var errArray=[1,1,1,1];
+        var objhoten=document.getElementById("ho-ten")
+        console.log(objhoten);
+        var objngaysinh=document.getElementById("ngay-sinh");
+        console.log(objngaysinh);
+        var objcmnd=document.getElementById("cmnd");
+        console.log(objcmnd);
+        var objbophan=document.getElementById("bo-phan")
+        console.log(objsongay);
+        var objlephi=document.getElementById("so-ngay")
+        console.log(objsongay);
+        var objdangki=document.getElementById("thuc-hien")
+        var objtaomoi=document.getElementById("tao-moi")
+        var objketqua=document.getElementById("ket-qua")
+        var listmondks =  ['Phòng Đào tạo','Phòng Tài chính', 'Phòng Quản trị', 'Trung tâm sát hạch'];
+        function createMondks(listmondks){
+            var listOptions = listmondks.map(function(item, index){
+                return `<option value='${index}'>${item}</option>`
+            });
+            var chuoiOptions = listOptions.join('');
+            console.log(chuoiOptions);
+            objbophan.innerHTML = chuoiOptions;
+        }
+        createbophanobjbophans(listbophanobjbophans);
+        function tongMang(arr){
+            var tong=0;
+            for (var i = 0; i < arr.length; i++){
+                tong+=arr[i];
+            }
+            return tong;
+        }
+        objhoten.onblur = function(){
+            if(this.value==''){
+                errArray[1]=1;
+                document.getElementById("errho-ten").innerHTML=chuoiLoi;
+            }else{
+                errArray[1]=0;
+                document.getElementById("errho-ten").innerHTML="";
+            }
+        };
+        objngaysinh.onblur=function(){
+            var chuoi=this.value;
+            var kt=Date.parse(chuoi);
+            console.log(kt);
+            errArray[2]=0;
+            document.getElementById("errngay-di").innerHTML="";
+            if(kt=='' || isNaN(kt)){
+                errArray[2]=1;
+                console.log(document.getElementById("errngay-di"));
+                document.getElementById("errngay-di").innerHTML=chuoiLoi;
+            }
+            else{
+                errArray[2]=0;
+                document.getElementById("errngay-di").innerHTML="";
+            }
+        }
+        objcmnd.onblur = function(){
+            if(this.value==''){
+                errArray[0]=1;
+                document.getElementById("errcmnd").innerHTML=chuoiLoi;
+            }else{
+                if(this.value.length==9 || this.value.length==12)
+                {
+                errArray[0]=0;
+                document.getElementById("errcmnd").innerHTML="";}
+                else{
+                errArray[0]=1;
+                document.getElementById("errcmnd").innerHTML=chuoiLoi;
+            }
+            }
+        };
+        objsongay.onblur=function(){
+            var gt=this.value;
+            if(gt=='' || isNaN(gt)){
+                errArray[3]=1;
+                console.log(document.getElementById("errso-ngay"));
+                document.getElementById("errso-ngay").innerHTML=chuoiLoi;
+            }
+            else{
+                errArray[3]=0;
+                document.getElementById("errso-ngay").innerHTML="";
+            }
+        }
+        objdangki.onclick=function(){
+            if(tongMang(errArray)>0){
+                objketqua.innerHTML="<span style='color:red'>Đăng ký thất bại";
+            }else{
+                objketqua.innerHTML=`Anh(Chị) ${objhovaten.value} đã đăng ký đi công tác ${objmondk.options[objbophan.selectedIndex].text}`;
+            }
+        }
+        objtaomoi.onclick=function(){
+            var listtext=document.querySelectorAll(`input[type="text"]`);
+            listtext.forEach(element => {
+                element.value='';
+            });
+        }
+        
+        </script>
+  </body>
+</html>
